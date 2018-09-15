@@ -77,11 +77,61 @@
     font-weight: 16px;
 }
 
-.scale,
-.scale li {
+/* food CO2 scale */
+.scale, .scale li {
     margin: 0;
     padding: 0;
     list-style: none;
     display: inline-block;
     vertical-align: middle;
+}
+.scale {
+    width: 80%;
+    margin: 0 0 25px 0;
+    /* box-shadow: 0 -1px 1em hsl(60, 60%, 84%) inset; */
+    border-radius: 4px;
+    color: #ccc;
+    margin: 0;
+    /* height: 2px; */
+    /* background-color: #ccc; */
+    white-space: nowrap;
+}
+.scale li.item {
+    height: 3px;
+    width: 33%;
+    min-width: inherit;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+}
+.scale li:first-child {
+    background-color: var(--default-color);
+}
+.scale li:nth-child(2) {
+    background-color: var(--primary-color);
+}
+.scale li:last-child {
+    background-color: var(--error-color);
+}
+.scale li:before {
+    content: '';
+    position: absolute;
+    border-left: 1px solid #ccc;
+    height: .64em;
+    top: 0;
+    right: 0;
+}
+.scale li:first-child:after {
+    content: 'A';
+}
+.scale li:nth-child(2):after {
+    content: 'B';
+}
+.scale li:last-child:after {
+    content: 'C';
+}
+.scale li:last-child:before {
+    content: '40 CO2 Kilos';
+    font-size: 13px;
 }

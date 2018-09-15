@@ -67,9 +67,7 @@ function showPopup() {
         },
         scaleMarkup = `
         <ul class="scale">
-            <li class="item a"></li>
-            <li class="item b"></li>
-            <li class="item c"></li>
+            <li class="item a"></li><li class="item b"></li><li class="item c"></li>
         </ul>
     `,
         contentMarkup = `
