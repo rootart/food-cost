@@ -1,4 +1,5 @@
 /* general styles */
+
 :root {
     /* --default-color: #9FD9B4; */
     --default-color: green;
@@ -11,6 +12,7 @@
     margin: 0 0 15px 0;
     padding: 0;
 }
+
 .list-checkmarks i {
     font-weight: bold;
     font-style: normal;
@@ -19,6 +21,7 @@
     display: inline-block;
     vertical-align: middle;
 }
+
 .list-checkmarks.sun i {
     color: yellowgreen;
 }
@@ -39,31 +42,43 @@
     font-size: 0.8em;
 }
 
+.fdc-info {
+    text-align: right;
+}
+
+
 /* describe carbon emission */
+
 .carbon-emission-mark {
     margin: 10px 0 0 0;
 }
+
 .carbon-emission-mark.good {
-    color: var(--default-color);  
+    color: var(--default-color);
 }
+
 .carbon-emission-mark.bad {
-    color: var(--error-color);  
+    color: var(--error-color);
 }
+
 .carbon-emission-mark span {
     display: inline-block;
     vertical-align: middle;
 }
+
 .carbon-emission-mark .icon {
     font-weight: bold;
     font-size: 26px;
     margin: 0 2px 0 0;
 }
+
 .carbon-emission-mark .text {
     font-weight: bold;
     font-weight: 16px;
 }
 
-.scale, .scale li {
+.scale,
+.scale li {
     margin: 0;
     padding: 0;
     list-style: none;

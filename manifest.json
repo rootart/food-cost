@@ -10,12 +10,13 @@
     "content_scripts": [{
         "matches": ["https://*.migros.ch/*"],
         "css": [
-            "css/app.css", 
+            "css/app.css",
             "css/tingle.css",
             "css/popup-content.css"
         ],
         "js": [
-            "js/tingle.js", 
+            "js/tingle.js",
+            "js/lodash.core.js",
             "inject.js"
         ]
     }],

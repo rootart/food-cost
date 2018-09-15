@@ -4,11 +4,14 @@ Element.prototype.appendAfter = function(element) {
 
 
 function createEnvImpactElement(options) {
-    let el = document.createElement('div');
+    let el = document.createElement('div'),
+        ranking = _.sample(['B', 'C']);
     el.innerHTML = `
         <div class='fdc-ranking'>
-            <b>&#9757; A+  </b>
-            <span> by <a href='#'>food costs</a> </span>
+            <b>&#9757; ${ranking}  </b>
+
+                <span>27 - CO2 Kilos Equivalent. by <a href='#'>food costs</a></span>
+
         </div>
     `;
     return el;
@@ -18,8 +21,8 @@ function embedElementOnPage(product) {
     const priceElement = document.getElementsByClassName('sidebar-price')[0];
     const el = createEnvImpactElement();
     el.appendAfter(priceElement);
-    
-    showPopup(); // show popup on init
+
+    //showPopup(); // show popup on init
     el.addEventListener('click', showPopup);
 }
 
@@ -45,30 +48,30 @@ function showPopup() {
     });
 
     const productTitle = document.getElementsByClassName('sidebar-product-name')[0].textContent.trim(),
-    foodExplanation = {
-        title: 'Reduce your Carbon Footprint from food',
-        list: [
-            'Eat locally-produced and organic food',
-            'Cut the beef and dairy',
-            'Reduce daily portion'
-        ],
-        title1: 'And you will',
-        list1: [
-            'reduce pollution',
-            'preserve the environment and slow global warming',
-            'save you money',
-            'improve your health',
-            'keep you fit'
-        ]
-    },
-    scaleMarkup = `
+        foodExplanation = {
+            title: 'Reduce your Carbon Footprint from food',
+            list: [
+                'Eat locally-produced and organic food',
+                'Cut the beef and dairy',
+                'Reduce daily portion'
+            ],
+            title1: 'And you will',
+            list1: [
+                'reduce pollution',
+                'preserve the environment and slow global warming',
+                'save you money',
+                'improve your health',
+                'keep you fit'
+            ]
+        },
+        scaleMarkup = `
         <ul class="scale">
             <li class="item a"></li>
             <li class="item b"></li>
             <li class="item c"></li>
         </ul>
     `,
-    contentMarkup = `
+        contentMarkup = `
         <div class="popup-content">
             <h1 class="product-title">${productTitle}</h1>
             <div class="container">
