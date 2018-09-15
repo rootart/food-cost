@@ -80,13 +80,13 @@
 
 .carbon-emission-mark .icon {
     font-weight: bold;
-    font-size: 26px;
+    font-size: 24px;
     margin: 0 2px 0 0;
 }
 
 .carbon-emission-mark .text {
     font-weight: bold;
-    font-weight: 16px;
+    font-size: 30px;
 }
 
 /* food CO2 scale */
@@ -133,7 +133,8 @@
 .scale li:after {
     position: absolute;
     top: 34px;
-    margin-left: -15px;
+    left: 30%;
+    /* margin-left: -25px; */
     color: #000;
     font-weight: bold;
     font-size: 22px;
@@ -148,7 +149,7 @@
     content: 'C (25+)';
 }
 /* .scale li:last-child:before {
-    /* top: 0px; */
+    top: 0px;
 
     content: '40 CO2 Kilos';
     font-size: 14px;

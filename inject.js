@@ -105,15 +105,14 @@ function showPopup(ranking) {
             <div class="container">
                 
                 <div class="big-item item">
-                <img src="${img}" width="200" />
-                    ${scaleMarkup}
+                    <img src="${img}" width="200" />
                     <div class="carbon-emission-mark bad">
                         <span class="icon">&#9747;</span>
                         <span class="text">
                             ${ranking.co2} CO<sub>2<sub>
-
                         </span>
                     </div>
+                    ${scaleMarkup}
                 </div>
                 <div class="small-item item">
                     <div class="food-explanation">
