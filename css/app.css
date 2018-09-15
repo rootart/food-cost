@@ -119,19 +119,33 @@
     position: absolute;
     border-left: 1px solid #ccc;
     height: .64em;
-    top: 0;
+    top: 0px;
     right: 0;
 }
 .scale li:first-child:after {
     content: 'A';
+   
+    margin: 8px 0 0 0;
+    color: #000;
+    font-weight: bold;
 }
 .scale li:nth-child(2):after {
     content: 'B';
+
+    margin: 8px 0 0 0;
+    color: #000;
+    font-weight: bold;
 }
 .scale li:last-child:after {
     content: 'C';
+
+    margin: 8px 0 0 0;
+    color: #000;
+    font-weight: bold;
 }
 .scale li:last-child:before {
     content: '40 CO2 Kilos';
     font-size: 13px;
+    width: 100px;
+    margin-left: -50px;
 }
