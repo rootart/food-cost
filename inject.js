@@ -20,7 +20,7 @@ function embedElementOnPage(product) {
     el.appendAfter(priceElement);
     
     showPopup(); // show popup on init
-    //el.addEventListener('click', showPopup);
+    el.addEventListener('click', showPopup);
 }
 
 function showPopup() {
@@ -61,15 +61,19 @@ function showPopup() {
             'keep you fit'
         ]
     },
+    scaleMarkup = `
+        <ul class="scale">
+            <li class="item a"></li>
+            <li class="item b"></li>
+            <li class="item c"></li>
+        </ul>
+    `,
     contentMarkup = `
         <div class="popup-content">
             <h1 class="product-title">${productTitle}</h1>
             <div class="container">
                 <div class="big-item item">
-                    <div class="scale">
-                        A C
-                    </div>
-
+                    ${scaleMarkup}
                     <div class="carbon-emission-mark good">
                         <span class="icon">+</span>
                         <span class="text">Good</span>
@@ -88,11 +92,14 @@ function showPopup() {
                             <li><i>&#9745;</i> ${foodExplanation.list[1]}</li>
                             <li><i>&#9745;</i> ${foodExplanation.list[2]}</li>
                         </ul>
-                        <h2 class="title">${foodExplanation.title}</h2>
-                        <ul class="list-checkmarks">
-                            <li><i>&#9745;</i> ${foodExplanation.list[0]}</li>
-                            <li><i>&#9745;</i> ${foodExplanation.list[1]}</li>
-                            <li><i>&#9745;</i> ${foodExplanation.list[2]}</li>
+                        <h3 class="sub-title">${foodExplanation.title1}</h2>
+                        <ul class="list-checkmarks sun">
+                            <li><i>&#9728;</i> ${foodExplanation.list1[0]}</li>
+                            <li><i>&#9728;</i> ${foodExplanation.list1[1]}</li>
+                            <li><i>&#9728;</i> ${foodExplanation.list1[2]}</li>
+                            <li><i>&#9728;</i> ${foodExplanation.list1[3]}</li>
+                            <li><i>&#9728;</i> ${foodExplanation.list1[4]}</li>
+                            <li><i>&#9728;</i> ${foodExplanation.list1[5]}</li>
                         </ul>
                     </div>    
                 </div>
@@ -104,16 +111,16 @@ function showPopup() {
     modal.setContent(contentMarkup);
 
     // add a button
-    modal.addFooterBtn('Button label', 'tingle-btn tingle-btn--primary', function() {
-        // here goes some logic
-        modal.close();
-    });
+    // modal.addFooterBtn('Button label', 'tingle-btn tingle-btn--primary', function() {
+    //     // here goes some logic
+    //     modal.close();
+    // });
 
     // add another button
-    modal.addFooterBtn('Dangerous action !', 'tingle-btn tingle-btn--danger', function() {
-        // here goes some logic
-        modal.close();
-    });
+    // modal.addFooterBtn('Dangerous action !', 'tingle-btn tingle-btn--danger', function() {
+    //     // here goes some logic
+    //     modal.close();
+    // });
 
     modal.open()
 }

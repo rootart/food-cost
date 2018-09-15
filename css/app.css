@@ -8,7 +8,7 @@
 
 .list-checkmarks {
     list-style: none;
-    margin: 0;
+    margin: 0 0 15px 0;
     padding: 0;
 }
 .list-checkmarks i {
@@ -16,6 +16,11 @@
     font-style: normal;
     font-size: 26px;
     color: var(--default-color);
+    display: inline-block;
+    vertical-align: middle;
+}
+.list-checkmarks.sun i {
+    color: yellowgreen;
 }
 
 .fdc-ranking {
@@ -56,4 +61,12 @@
 .carbon-emission-mark .text {
     font-weight: bold;
     font-weight: 16px;
+}
+
+.scale, .scale li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    vertical-align: middle;
 }
