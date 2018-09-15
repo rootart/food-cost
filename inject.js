@@ -48,6 +48,7 @@ function showPopup() {
     });
 
     const productTitle = document.getElementsByClassName('sidebar-product-name')[0].textContent.trim(),
+        img = document.getElementsByClassName('product-stage-slider-image')[0].getAttribute('src'),
         foodExplanation = {
             title: 'Reduce your Carbon Footprint from food',
             list: [
@@ -75,6 +76,7 @@ function showPopup() {
         <div class="popup-content">
             <h1 class="product-title">${productTitle}</h1>
             <div class="container">
+                <img src="${img}" />
                 <div class="big-item item">
                     ${scaleMarkup}
                     <div class="carbon-emission-mark good">
