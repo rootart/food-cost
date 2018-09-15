@@ -9,8 +9,8 @@
     ],
     "content_scripts": [{
         "matches": ["https://*.migros.ch/*"],
-        "css": ["css/app.css"],
-        "js": ["inject.js"]
+        "css": ["css/app.css", "css/tingle.css"],
+        "js": ["js/tingle.js", "inject.js"]
     }],
     "background": {
         "scripts": ["background.js"],
