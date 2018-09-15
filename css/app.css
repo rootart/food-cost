@@ -1,9 +1,21 @@
 /* general styles */
-.col {
-    width: 50%;
+:root {
+    /* --default-color: #9FD9B4; */
+    --default-color: green;
+    --primary-color: #FCD385;
+    --error-color: #914146;
 }
-left {
-    float: left;
+
+.list-checkmarks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.list-checkmarks i {
+    font-weight: bold;
+    font-style: normal;
+    font-size: 26px;
+    color: var(--default-color);
 }
 
 .fdc-ranking {
@@ -20,4 +32,28 @@ left {
 
 .fdc-ranking span {
     font-size: 0.8em;
+}
+
+/* describe carbon emission */
+.carbon-emission-mark {
+    margin: 10px 0 0 0;
+}
+.carbon-emission-mark.good {
+    color: var(--default-color);  
+}
+.carbon-emission-mark.bad {
+    color: var(--error-color);  
+}
+.carbon-emission-mark span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.carbon-emission-mark .icon {
+    font-weight: bold;
+    font-size: 26px;
+    margin: 0 2px 0 0;
+}
+.carbon-emission-mark .text {
+    font-weight: bold;
+    font-weight: 16px;
 }

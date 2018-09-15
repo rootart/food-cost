@@ -15,12 +15,11 @@ function createEnvImpactElement(options) {
 }
 
 function embedElementOnPage(product) {
-    const priceElement = document.getElementsByClassName(
-        'sidebar-price-shadow'
-    )[0];
+    const priceElement = document.getElementsByClassName('sidebar-price')[0];
     const el = createEnvImpactElement();
     el.appendAfter(priceElement);
-    showPopup();
+    
+    showPopup(); // show popup on init
     //el.addEventListener('click', showPopup);
 }
 
@@ -45,19 +44,56 @@ function showPopup() {
         }
     });
 
-    const contentMarkup = `
+    const productTitle = document.getElementsByClassName('sidebar-product-name')[0].textContent.trim(),
+    foodExplanation = {
+        title: 'Reduce your Carbon Footprint from food',
+        list: [
+            'Eat locally-produced and organic food',
+            'Cut the beef and dairy',
+            'Reduce daily portion'
+        ],
+        title1: 'And you will',
+        list1: [
+            'reduce pollution',
+            'preserve the environment and slow global warming',
+            'save you money',
+            'improve your health',
+            'keep you fit'
+        ]
+    },
+    contentMarkup = `
         <div class="popup-content">
-            <h1 class="product-title">here\'s some content</h1>
+            <h1 class="product-title">${productTitle}</h1>
             <div class="container">
                 <div class="big-item item">
-                    test
                     <div class="scale">
-                    A C
+                        A C
+                    </div>
+
+                    <div class="carbon-emission-mark good">
+                        <span class="icon">+</span>
+                        <span class="text">Good</span>
+                    </div>
+
+                    <div class="carbon-emission-mark bad">
+                        <span class="icon">&#9747;</span>
+                        <span class="text">Bad</span>
                     </div>
                 </div>
                 <div class="small-item item">
                     <div class="food-explanation">
-                        test 2
+                        <h2 class="title">${foodExplanation.title}</h2>
+                        <ul class="list-checkmarks">
+                            <li><i>&#9745;</i> ${foodExplanation.list[0]}</li>
+                            <li><i>&#9745;</i> ${foodExplanation.list[1]}</li>
+                            <li><i>&#9745;</i> ${foodExplanation.list[2]}</li>
+                        </ul>
+                        <h2 class="title">${foodExplanation.title}</h2>
+                        <ul class="list-checkmarks">
+                            <li><i>&#9745;</i> ${foodExplanation.list[0]}</li>
+                            <li><i>&#9745;</i> ${foodExplanation.list[1]}</li>
+                            <li><i>&#9745;</i> ${foodExplanation.list[2]}</li>
+                        </ul>
                     </div>    
                 </div>
             </div>  

@@ -1,7 +1,6 @@
 .popup-content {
-    font-size: 14px;
+    font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-
 }
 .popup-content .container {
     display: flex;
@@ -27,15 +26,24 @@
 }
 
 .popup-content .item {
-    /* background: red; */
     min-width: 100px;
 }
 
-.product-title {
-
+.popup-content .product-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 0 10px 0;
 }
 
 .popup-content .food-explanation {
     border-left: 1px solid #ccc;
-    padding: 10px;
+    padding: 0 0 0 15px;
+}
+
+.popup-content .food-explanation .title {
+    margin: 0;
+    padding: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
 }
