@@ -86,7 +86,7 @@ function showPopup(ranking) {
             title1: 'And you will',
             list1: [
                 'reduce pollution',
-                'preserve the environment and slow global warming',
+                'preserve environment and slow global warming',
                 'save you money',
                 'improve your health',
                 'keep you fit'
@@ -94,48 +94,48 @@ function showPopup(ranking) {
             scaleTitle: 'Product category according to CO2 environment emission impact'
         },
         scaleMarkup = `
-        <h2 class="sub-title">${foodExplanation.scaleTitle}</h2>  
-        <ul class="scale">
-            <li class="item a"></li><li class="item b"></li><li class="item c"></li>
-        </ul>
-    `,
+            <h2 class="sub-title">${foodExplanation.scaleTitle}</h2>  
+            <ul class="scale">
+                <li class="item a"></li><li class="item b"></li><li class="item c"></li>
+            </ul>
+        `,
         contentMarkup = `
-        <div class="popup-content">
-            <h1 class="product-title">&#9757; ${productTitle}</h1>
-            <div class="container">
-                
-                <div class="big-item item">
-                    <img src="${img}" width="200" />
-                    <div class="carbon-emission-mark bad">
-                        <span class="icon">&#9747;</span>
-                        <span class="text">
-                            ${ranking.co2} CO<sub>2<sub>
-                        </span>
+            <div class="popup-content">
+                <h1 class="product-title">&#9757; ${productTitle}</h1>
+                <div class="container">
+                    <div class="big-item item">
+                        <img src="${img}" width="200" />
+                        <div class="carbon-emission-mark bad">
+                            <span class="icon">&#9747;</span>
+                            <span class="text">
+                                ${ranking.co2} CO<sub>2<sub>
+                            </span>
+                        </div>
+                        ${scaleMarkup}
                     </div>
-                    ${scaleMarkup}
-                </div>
-                <div class="small-item item">
-                    <div class="food-explanation">
-                        <h2 class="title">${foodExplanation.title}</h2>
-                        <ul class="list-checkmarks">
-                            <li><i>&#9745;</i> ${foodExplanation.list[0]}</li>
-                            <li><i>&#9745;</i> ${foodExplanation.list[1]}</li>
-                            <li><i>&#9745;</i> ${foodExplanation.list[2]}</li>
-                        </ul>
-                        <h3 class="sub-title">${foodExplanation.title1}</h2>
-                        <ul class="list-checkmarks sun">
-                            <li><i>&#9728;</i> ${foodExplanation.list1[0]}</li>
-                            <li><i>&#9728;</i> ${foodExplanation.list1[1]}</li>
-                            <li><i>&#9728;</i> ${foodExplanation.list1[2]}</li>
-                            <li><i>&#9728;</i> ${foodExplanation.list1[3]}</li>
-                            <li><i>&#9728;</i> ${foodExplanation.list1[4]}</li>
-                            <li><i>&#9728;</i> ${foodExplanation.list1[5]}</li>
-                        </ul>
-                    </div>    
-                </div>
-            </div>  
-        </div> 
-    `;
+                    <div class="small-item item">
+                        <div class="food-explanation">
+                            <h2 class="title">${foodExplanation.title}</h2>
+                            <ul class="list-checkmarks">
+                                ${
+                                    foodExplanation.list.map((item, index) => {
+                                        return (`<li><i>&#9745;</i> ${item}</li>`);
+                                    }).join('')
+                                }
+                            </ul>
+                            <h3 class="sub-title">${foodExplanation.title1}</h3>
+                            <ul class="list-checkmarks sun">
+                                ${
+                                    foodExplanation.list1.map((item, index) => {
+                                        return (`<li><i>&#9728;</i> ${item}</li>`);
+                                    }).join('')
+                                }
+                            </ul>
+                        </div>    
+                    </div>
+                </div>  
+            </div> 
+        `;
 
     // set content
     modal.setContent(contentMarkup);
