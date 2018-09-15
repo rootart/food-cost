@@ -5,28 +5,55 @@ Element.prototype.appendAfter = function(element) {
 
 function createEnvImpactElement(options) {
     let el = document.createElement('div'),
-        ranking = _.sample(['B', 'C']);
+        ranking = _.sample([
+            {
+                name: 'B',
+                co2: '23',
+                replacements: [
+                    'lentils',
+                    'quionoa'
+                ]
+            },
+            {
+                name: 'C',
+                co2: '39',
+                replacements: [
+                    'beans',
+                    'tofu',
+                    'nuts'
+                ]
+            }
+        ]);
     el.innerHTML = `
-        <div class='fdc-ranking'>
-            <b>&#9757; ${ranking}  </b>
-
-                <span>27 - CO2 Kilos Equivalent. by <a href='#'>food costs</a></span>
-
-        </div>
+        <a class="fdc-ranking" href="#">
+            <b>&#9757; ${ranking.name}  </b>
+            <span>
+                <span class="rank">${ranking.co2}</span> - CO2 Kilos Equivalent 
+                by <span class="link">food costs</span>
+            </span>
+        </a>
     `;
-    return el;
+    return {
+        el: el,
+        ranking: ranking
+    };
 }
 
 function embedElementOnPage(product) {
-    const priceElement = document.getElementsByClassName('sidebar-price')[0];
-    const el = createEnvImpactElement();
+    const priceElement = document.getElementsByClassName('sidebar-price')[0],
+        data = createEnvImpactElement(),
+        el = data['el'],
+        ranking = data['ranking'];
+
     el.appendAfter(priceElement);
 
     //showPopup(); // show popup on init
-    el.addEventListener('click', showPopup);
+    el.addEventListener('click', function () {
+        showPopup(ranking)
+    });
 }
 
-function showPopup() {
+function showPopup(ranking) {
     var modal = new tingle.modal({
         footer: true,
         stickyFooter: false,
@@ -63,29 +90,29 @@ function showPopup() {
                 'save you money',
                 'improve your health',
                 'keep you fit'
-            ]
+            ],
+            scaleTitle: 'Product category according to CO2 environment emission impact'
         },
         scaleMarkup = `
+        <h2 class="sub-title">${foodExplanation.scaleTitle}</h2>  
         <ul class="scale">
             <li class="item a"></li><li class="item b"></li><li class="item c"></li>
         </ul>
     `,
         contentMarkup = `
         <div class="popup-content">
-            <h1 class="product-title">${productTitle}</h1>
+            <h1 class="product-title">&#9757; ${productTitle}</h1>
             <div class="container">
                 
                 <div class="big-item item">
-                <img src="${img}" width=100/>
+                <img src="${img}" width="200" />
                     ${scaleMarkup}
-                    <div class="carbon-emission-mark good">
-                        <span class="icon">+</span>
-                        <span class="text">Good</span>
-                    </div>
-
                     <div class="carbon-emission-mark bad">
                         <span class="icon">&#9747;</span>
-                        <span class="text">Bad</span>
+                        <span class="text">
+                            ${ranking.co2} CO<sub>2<sub>
+
+                        </span>
                     </div>
                 </div>
                 <div class="small-item item">

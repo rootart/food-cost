@@ -29,21 +29,33 @@
 .fdc-ranking {
     box-shadow: 1px 1px 6px rgba(0, 0, 0, .3);
     padding: 2px 8px 0;
-    margin-top: -4px;
-    margin-bottom: 8px;
+    margin-top: 4px;
+    margin-bottom: 8px !important;
+    display: block;
+    padding: 0 !important;
+    color: #000;
 }
+.fdc-ranking .link {
+    color: #f60;
+    text-decoration: underline;
+    font-size: 14px;
 
+}
 .fdc-ranking b {
     font-size: 3em;
     font-weight: 400;
 }
-
 .fdc-ranking span {
     font-size: 0.8em;
 }
-
 .fdc-info {
     text-align: right;
+}
+.fdc-ranking .rank {
+    font-weight: bold;
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -78,7 +90,8 @@
 }
 
 /* food CO2 scale */
-.scale, .scale li {
+.scale, 
+.scale li {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -87,17 +100,12 @@
 }
 .scale {
     width: 80%;
-    margin: 0 0 25px 0;
-    /* box-shadow: 0 -1px 1em hsl(60, 60%, 84%) inset; */
+    margin: 10px 0 25px 0;
     border-radius: 4px;
-    color: #ccc;
-    margin: 0;
-    /* height: 2px; */
-    /* background-color: #ccc; */
     white-space: nowrap;
 }
 .scale li.item {
-    height: 3px;
+    height: 20px;
     width: 33%;
     min-width: inherit;
     margin: 0;
@@ -118,34 +126,32 @@
     content: '';
     position: absolute;
     border-left: 1px solid #ccc;
-    height: .64em;
+    height: 1.5em;
     top: 0px;
     right: 0;
 }
-.scale li:first-child:after {
-    content: 'A';
-   
-    margin: 8px 0 0 0;
+.scale li:after {
+    position: absolute;
+    top: 34px;
+    margin-left: -15px;
     color: #000;
     font-weight: bold;
+    font-size: 22px;
+}
+.scale li:first-child:after {
+    content: 'A (0 - 10)';
 }
 .scale li:nth-child(2):after {
-    content: 'B';
-
-    margin: 8px 0 0 0;
-    color: #000;
-    font-weight: bold;
+    content: 'B (10 - 25)';
 }
 .scale li:last-child:after {
-    content: 'C';
-
-    margin: 8px 0 0 0;
-    color: #000;
-    font-weight: bold;
+    content: 'C (25+)';
 }
-.scale li:last-child:before {
+/* .scale li:last-child:before {
+    /* top: 0px; */
+
     content: '40 CO2 Kilos';
-    font-size: 13px;
+    font-size: 14px;
     width: 100px;
     margin-left: -50px;
-}
+} */
