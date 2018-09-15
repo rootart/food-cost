@@ -74,8 +74,9 @@ function showPopup() {
         <div class="popup-content">
             <h1 class="product-title">${productTitle}</h1>
             <div class="container">
-                <img src="${img}" />
+                
                 <div class="big-item item">
+                <img src="${img}" width=100/>
                     ${scaleMarkup}
                     <div class="carbon-emission-mark good">
                         <span class="icon">+</span>
