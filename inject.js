@@ -8,8 +8,7 @@ function createEnvImpactElement(options) {
     el.innerHTML = `
         <div class='fdc-ranking'>
             <b>&#9757; A+  </b>
-            <span> by <a href='#'>food costs</a> 
-            </span>
+            <span> by <a href='#'>food costs</a> </span>
         </div>
     `;
     return el;
@@ -21,9 +20,9 @@ function embedElementOnPage(product) {
     )[0];
     const el = createEnvImpactElement();
     el.appendAfter(priceElement);
-    el.addEventListener('click', showPopup);
+    showPopup();
+    //el.addEventListener('click', showPopup);
 }
-
 
 function showPopup() {
     var modal = new tingle.modal({
@@ -46,8 +45,27 @@ function showPopup() {
         }
     });
 
+    const contentMarkup = `
+        <div class="popup-content">
+            <h1 class="product-title">here\'s some content</h1>
+            <div class="container">
+                <div class="big-item item">
+                    test
+                    <div class="scale">
+                    A C
+                    </div>
+                </div>
+                <div class="small-item item">
+                    <div class="food-explanation">
+                        test 2
+                    </div>    
+                </div>
+            </div>  
+        </div> 
+    `;
+
     // set content
-    modal.setContent('<h1>here\'s some content</h1>');
+    modal.setContent(contentMarkup);
 
     // add a button
     modal.addFooterBtn('Button label', 'tingle-btn tingle-btn--primary', function() {
@@ -62,10 +80,6 @@ function showPopup() {
     });
 
     modal.open()
-
 }
-
-
-
 
 embedElementOnPage();
