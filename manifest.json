@@ -1,0 +1,19 @@
+{
+    "name": "Real food cost",
+    "version": "1.0",
+    "description": "ZurichHack project to display real food costs for the environment",
+    "manifest_version": 2,
+    "permissions": [
+        "activeTab",
+        "declarativeContent"
+    ],
+    "content_scripts": [{
+        "matches": ["https://*.migros.ch/*"],
+        "css": ["css/app.css"],
+        "js": ["inject.js"]
+    }],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    }
+}
