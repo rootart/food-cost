@@ -26,12 +26,19 @@ function createEnvImpactElement(options) {
         ]);
     el.innerHTML = `
         <a class="fdc-ranking" href="#">
-            <b>&#9757; ${ranking.name}  </b>
+            <b>&#9757; ${ranking.name}</b>
             <span>
                 <span class="rank">${ranking.co2}</span> - CO2 Kilos Equivalent 
                 by <span class="link">food costs</span>
             </span>
-        </a>
+            <span class="read-more">
+                <span class="text">Learn more</span>    
+                <svg width="14" height="9" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke-width="2" stroke="#f60" fill="none" fill-rule="evenodd" stroke-linecap="round">
+                        <path d="M1.5 4.5H12M10 8l2.798-3.5L10 1"></path>
+                    </g>
+                </svg>
+            </span>
     `;
     return {
         el: el,
@@ -112,6 +119,16 @@ function showPopup(ranking) {
                             </span>
                         </div>
                         ${scaleMarkup}
+                        <div class="replacements">
+                            <h2 class="sub-title">Could be replaced with:</h2>
+                            <ul>
+                            ${
+                                ranking.replacements.map((item, index) => {
+                                    return (`<li>${item}</li>`);
+                                }).join('')
+                            }
+                            </ul>
+                        </div>
                     </div>
                     <div class="small-item item">
                         <div class="food-explanation">
