@@ -101,7 +101,7 @@ function showPopup(ranking) {
             scaleTitle: 'Product category according to CO2 environment emission impact'
         },
         scaleMarkup = `
-            <h2 class="sub-title">${foodExplanation.scaleTitle}</h2>  
+            <h2 class="sub-title scale-title">${foodExplanation.scaleTitle}</h2>  
             <ul class="scale">
                 <li class="item a"></li><li class="item b"></li><li class="item c"></li>
             </ul>
