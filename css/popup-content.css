@@ -59,3 +59,19 @@
     font-size: 16px;
     font-weight: bold;
 }
+
+.popup-content .carbon-emission {
+    margin: 1px 0 0 0;
+}
+.carbon-emission-mark {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 25px 0 0;
+}
+.popup-content .button-default {
+    background-color: green;
+    color: #fff;
+    border-radius: 4px;
+    padding: 4px 10px;
+    
+}

@@ -112,11 +112,14 @@ function showPopup(ranking) {
                 <div class="container">
                     <div class="big-item item">
                         <img src="${img}" width="200" />
-                        <div class="carbon-emission-mark bad">
-                            <span class="icon">&#9747;</span>
-                            <span class="text">
-                                ${ranking.co2} CO<sub>2<sub>
-                            </span>
+                        <div class="carbon-emission">
+                            <div class="carbon-emission-mark bad">
+                                <span class="icon">&#9747;</span>
+                                <span class="text">
+                                    ${ranking.co2} CO<sub>2<sub>
+                                </span>
+                            </div>
+                            <button type="button" class="button-default">Hide products with similiar impact</button>
                         </div>
                         ${scaleMarkup}
                         <div class="replacements">
