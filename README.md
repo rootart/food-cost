@@ -6,7 +6,10 @@ We care about what we consume and how it could change our future. Making the rig
 
 Displays relevant information about CO2 emission for the products in Migros grocery online shop. Similar to the energy efficiency index (EEI) we want to show in easy was what are the products with the least impact using categories A, B, C.
 
-![](https://g.recordit.co/k9Yie1Qyna.gif)
+![](https://github.com/rootart/food-cost/raw/master/screenshots/k9Yie1Qyna.gif)
+
+
+![](https://github.com/rootart/food-cost/raw/master/screenshots/9Uc4ZYjDdd.gif)
 
 ## How we built it
 
